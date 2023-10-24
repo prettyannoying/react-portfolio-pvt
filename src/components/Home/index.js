@@ -4,10 +4,11 @@ import './index.scss'
 import AnimatedLetters from '../AnimatedLetters';
 import { useEffect, useState } from 'react';
 import Logo from './Logo';
+import Loader from 'react-loaders';
 const Home = () => {
     
-    const [letterClass, setLetterClass] = useState('text-animate')
-    const nameArray = ['k', 'e', 'n', 'y']
+    const [letterClass, setLetterClass] = useState('text-animate');
+    const nameArray = ['k', 'e', 'n', 'y'];
     const jobArray = ['d','e', 'v','e', 'l','o','p','e', 'r'];
 
     useEffect(() => {
@@ -16,6 +17,7 @@ const Home = () => {
         }, 4000)
     }, [])
     return (
+        <>
         <div className="container home-page">
             <div className="text-zone">
                 <h1>
@@ -36,6 +38,8 @@ const Home = () => {
             </div>
             <Logo/>
         </div>
+        <Loader type="pacman" />
+        </>
     );
 }
 export default Home
